@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيت سبورت - احجز ملعبك والعب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+</head>
+<body>
+    <!-- Arrow Up -->
+     <div class="up">
+        <i class="fa-solid fa-arrow-up"></i>
+     </div>
+
+
+     <!-- Start Login PopUp -->
+     <div class="login-pop-up">
+        <div class="box">
+            <div class="close" onclick="closeHolder()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="btns">
+                <div class="button active" onclick="openSignUpHolder()">
+                    <span>
+                        إنشاء حساب
+                    </span>
+                </div>
+                <div class="button" onclick="openLoginHolder()">
+                    <span>
+                        تسجيل الدخول
+                    </span>
+                </div>
+            </div>
+
+            <div class="sign-up holder active">
+                <p>
+                    سجل في فيت سبورت
+                </p>
+                <ul class="socials">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                    </li>
+                </ul>
+                <form action="/sign-up" method="POST">
+                    <div class="input row">
+                        <div class="input">
+                            <label for="full-name">الاسم بالكامل</label>
+                            <input type="text" name="name" id="full-name" required placeholder="ادخل اسمك بالكامل">
+                        </div>
+                        <div class="input">
+                            <label for="tel">رقم الهاتف</label>
+                            <input type="tel" name="tel"  id="tel" required placeholder="ادخل رقم هاتفك">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني">
+                    </div>
+                    <div class="input">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" name="password" id="password" required placeholder="ادخل كلمة المرور">
+                    </div>
+                    <div class="input row">
+                        <div class="input">
+                            <label for="gender">الجنس</label>
+                            <select name="gender" id="gender">
+                                <option value="" selected disabled>اختر الجنس</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                        <div class="input">
+                            <label for="age">العمر</label>
+                            <input type="number" name="age" id="age" required placeholder="ادخل عمرك" />
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="code">هل لديك كود دعوة؟</label>
+                        <input type="text" name="code" id="code" placeholder="ادخل كود الدعوة">
+                    </div>
+                    <div class="outline">
+                        <button type="submit" class="btn">
+                            إنشاء حساب
+                        </button>
+                    </div>
+                    <p>
+                        لديك حساب بالفعل؟
+                        <a href="#" onclick="openLoginHolder()">
+                            تسجيل الدخول
+                        </a>
+                    </p>
+                </form>
+            </div>
+            <div class="login-up holder">
+                <p>
+                    سجل دخولك مباشرة عبر
+                </p>
+                <ul class="socials">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                    </li>
+                </ul>
+                <form action="/login" method="POST">
+                    <div class="input">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني">
+                    </div>
+                    <div class="input">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" name="password" id="password" required placeholder="ادخل كلمة المرور">
+                    </div>
+                    <div class="input row">
+                        <label for="forget"></label>
+                        <a href="/forget" class="forget">
+                            هل نسيت كلمة المرور؟
+                        </a>
+                    </div>
+                    <div class="outline">
+                        <button type="submit" class="btn">
+                            تسجيل الدخول
+                        </button>
+                    </div>
+                    <p>
+                        لست عضواً بعد؟
+                        <a href="#" onclick="openSignUpHolder()">
+                            إنشاء حساب
+                        </a>
+                    </p>
+                </form>
+            </div>
+        </div>
+     </div>
+     <!-- End Login PopUp -->
+    <!-- Start Header -->
+    <header>
+        <div class="logo">
+            <img src="imgs/logo.png" alt="Fit Sport Logo">
+        </div>
+        <nav>
+            <ul class="links">
+                <li><a href="./index.html">الرئيسية</a></li>
+                <li><a href="./playgrounds.html">الرياضات</a></li>
+                <li><a href="./contact.html">تواصل معنا</a></li>
+            </ul>
+            <div class="btns">
+                <a href="#" onclick="openLoginHolder()">
+                    تسجيل الدخول
+                </a>
+                <a href="#" onclick="openSignUpHolder()" class="btn">
+                    إنشاء حساب
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+    <!-- Start Hero -->
+    <section class="hero">
+        <div class="text">
+            <h4>
+                العب وتحدى الآن!
+            </h4>
+            <h1>
+                مجتمع رياضي متكامل بين يديك
+            </h1>
+            <p>
+                أسهل وأسرع طريقة لحجز الملاعب ومشاركة اللعب مع رياضيين بنفس شغفك. اختر رياضتك المفضلة، انضم لمباراة، أو كون فريقك الخاص!
+            </p>
+            <div class="outline">
+                <a href="#" class="btn outline">
+                    ابدأ الآن
+                </a>
+            </div>
+        </div>
+        <i class="fa-solid fa-futbol first"></i>
+        <i class="fa-solid fa-medal second"></i>
+        <i class="fa-solid fa-trophy third"></i>
+        <i class="fa-solid fa-baseball four"></i>
+        <i class="fa-solid fa-baseball-bat-ball five"></i>
+
+    </section>
+    <!-- End Hero -->
+    <!-- Start Benifits -->
+     <section class="benifits">
+        <div class="img">
+            <img src="imgs/about.png" alt="Balls">
+        </div>
+        <div class="text">
+            <h4>
+                تجربة رياضية من مستوى آخر
+            </h4>
+            <h1>
+                ثورة في عالم الرياضة الاجتماعية
+            </h1>
+            <p>
+                فيت سبورت هي منصتك المثالية التي تجمع بين سهولة حجز الملاعب ومتعة اللعب الجماعي في مكان واحد.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>
+                        حجز فوري
+                    </h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>
+                        انضم للاعبين
+                    </h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>
+                        مجتمع رياضي
+                    </h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>
+                        مدربون محترفون
+                    </h5>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- End Benifits -->
+    <!-- Start How -->
+    <section class="how">
+        <div class="text">
+            <h4>
+                اكتشف كيف
+            </h4>
+            <h2>
+                كيف يعمل فيت سبورت؟
+            </h2>
+            <p>
+                منصتنا مصممة لتكون بوابتك لعالم الرياضة. اتبع هذه الخطوات البسيطة وابدأ رحلتك الرياضية وحقق أهدافك!
+            </p>
+        </div>
+    </section>
+    <!-- End How -->
+    <!-- Start Steps -->
+    <section class="steps">
+    <ul class="steps">
+        <li>
+            <img src="imgs/one.png" alt="Step One">
+            <h5>
+                اختر رياضتك
+            </h5>
+        </li>
+        <li>
+            <img src="imgs/one.png" alt="Step One">
+            <h5>
+                اختر ملعبك
+            </h5>
+        </li>
+        <li>
+            <img src="imgs/one.png" alt="Step One">
+            <h5>
+                انضم لفريق
+            </h5>
+        </li>
+        <li>
+            <img src="imgs/one.png" alt="Step One">
+            <h5>
+                ادعُ أصدقائك
+            </h5>
+        </li>
+        <li>
+            <img src="imgs/one.png" alt="Step One">
+            <h5>
+                ابدأ اللعب
+            </h5>
+        </li>
+    </ul>
+    <div class="step-img">
+        <h3>
+            اختر المباراة
+        </h3>
+        <img src="imgs/step-1.png" alt="Step One">
+    </div>
+    </section>
+    <!-- End Steps -->
+    <!-- Start Sports -->
+    <section class="sports">
+        <div class="text">
+            <h4>
+                روّاد خدمات حجز الملاعب
+            </h4>
+            <h2>
+                قائمة شاملة من الميزات المذهلة
+            </h2>
+            <p>
+                فيت سبورت هي المنصة الأكثر تطوراً لحجز الملاعب الرياضية، وتوفر لك أعلى مستويات الخدمة عبر مجموعة واسعة من الملاعب والرياضات.
+            </p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        عمولات منخفضة
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        دعم فني 24/7
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        آمن وموثوق
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        عروض حصرية
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        تحديات ومكافآت
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/sport-1.png" alt="Sport One">
+                    <p>
+                        مجتمع متفاعل
+                    </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+    </section>
+    <!-- End Sports -->
+    <!-- Start FAQ -->
+    <section class="faq">
+        <div class="text">
+            <h4>
+                الأسئلة الشائعة
+            </h4>
+            <h2>
+                إذا كان لديك أسئلة، فلدينا الإجابات
+            </h2>
+            <p>
+                إجابات على أكثر الأسئلة شيوعًا حول حجز الملاعب، والدفع، واستخدام فيت سبورت.
+            </p>
+        </div>
+    </section>
+    <!-- End FAQ -->
+    <!-- Start Questions -->
+    <section class="questions">
+        <div class="holder">
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>كيف يمكنني حجز ملعب؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>عملية الحجز بسيطة جداً. كل ما عليك هو البحث عن الملعب المناسب لك حسب الرياضة والموقع، اختيار التاريخ والوقت، ثم إتمام عملية الدفع مباشرة عبر المنصة بكل سهولة وأمان.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>ليس لدي فريق كامل، هل يمكنني اللعب؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>بالطبع! هذه هي إحدى أهم ميزات فيت سبورت. يمكنك الانضمام إلى مباريات متاحة للجميع أو جعل حجزك عاماً لكي ينضم إليك لاعبون آخرون يشاركونك نفس الشغف وتكوين صداقات رياضية جديدة.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>ما هي طرق الدفع المتاحة؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>نوفر لك طرق دفع متنوعة لتناسب احتياجاتك، بما في ذلك الدفع الإلكتروني الآمن عبر الإنترنت (مثل فوري وبي موب) بالإضافة إلى خيار الدفع النقدي عند الوصول للملعب.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>هل يمكنني إلغاء حجزي؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>نعم، يمكنك إلغاء حجزك. تختلف سياسة الإلغاء حسب الملعب، لذا يرجى مراجعة شروط الإلغاء الخاصة بالملعب قبل تأكيد الحجز.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>هل يمكنني تقييم الملاعب واللاعبين الآخرين؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>نعم، نشجعك على تقييم تجربتك. يمكنك تقييم الملاعب بعد انتهاء الحجز، وكذلك تقييم اللاعبين الذين لعبت معهم للمساعدة في بناء مجتمع رياضي موثوق وممتع للجميع.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>هل يمكنني إيجاد مدرب شخصي عبر المنصة؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>نعم، نحن نعمل على إضافة ميزة تتيح لك البحث عن مدربين محترفين في مختلف الرياضات وحجز جلسات تدريبية شخصية لتحسين مهاراتك والوصول إلى أهدافك الرياضية.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>هل بياناتي الشخصية آمنة معكم؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>بالتأكيد. نحن نأخذ خصوصية وأمان بياناتك على محمل الجد. نستخدم أحدث تقنيات التشفير لحماية معلوماتك ولا نشاركها مع أي طرف ثالث دون موافقتك. يمكنك مراجعة صفحة <a href="policy.html" style="color: var(--pink);">سياسة الخصوصية</a> لمعرفة المزيد.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>ماذا أفعل إذا واجهت مشكلة أثناء الحجز أو اللعب؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>فريق الدعم الفني لدينا متاح لمساعدتك على مدار الساعة. يمكنك التواصل معنا مباشرة من خلال صفحة <a href="contact.html" style="color: var(--pink);">اتصل بنا</a> وسنقوم بحل مشكلتك في أسرع وقت ممكن.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h6>هل هناك أي رسوم إضافية على الحجز؟</h6>
+                    </div>
+                    <div class="end">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p>نحن نتميز بالشفافية الكاملة. السعر الذي تراه عند الحجز هو السعر النهائي الذي ستدفعه. لا توجد أي رسوم خفية أو إضافية.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- End Questions -->
+    <!-- Start Affilate -->
+    <section class="affilate">
+        <div class="img">
+            <img src="imgs/affilliate-image.jpg" alt="Affilate" /> 
+        </div>
+        <div class="text">
+            <h4>
+                انضم إلى شركاء نجاحنا
+            </h4>
+            <h2>
+                اكسب كشريك لنا
+            </h2>
+            <p>
+                انضم إلى برنامج الشركاء واحصل على حصة أرباح تصل إلى 50%! هل أنت مسوق بالعمولة محترف وترغب في وضع قواعدك الخاصة؟ يسعدنا التعرف على عرضك. كن شريكنا واكسب عندما يبدأ اللاعبون الذين دعوتهم باللعب!
+            </p>
+            <a href="#" class="btn outline">
+                اقرأ المزيد
+            </a>
+        </div>
+    </section>
+    <!-- End Affilate -->
+    <!-- Start Footer -->
+     <footer>
+        <div class="row">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Logo">
+            </div>
+            <ul class="links">
+                <li><a href="./contact.html">تواصل معنا</a></li>
+                <li><a href="./terms.html">شروط الاستخدام</a></li>
+                <li><a href="./policy.html">سياسة الخصوصية</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="payments">
+                <li>
+                    <img src="imgs/fawry.png" alt="Fawry">
+                </li>
+                <li>
+                    <img src="imgs/paymob.png" alt="Paymob">
+                </li>
+                <li>
+                    <img src="imgs/cod.png" style="filter: invert(1);" alt="Cash On Deleviry">
+                </li>
+            </ul>
+            <ul class="social">
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>
+                حقوق النشر &copy; <span><script>document.write(new Date().getFullYear());</script></span> جميع الحقوق محفوظة.
+            </p>
+        </div>
+     </footer>
+    <!-- End Footer -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

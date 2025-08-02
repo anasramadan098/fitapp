@@ -1,0 +1,293 @@
+/*
+========================================
+General Responsive Styles
+========================================
+*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    footer .logo {
+        max-width: 100%;
+    }
+
+    section.steps {
+        ul.steps , .step-img  {
+            width: 100%;
+        }
+    }
+    * {
+        text-align: center;
+    }
+
+    header ,
+    section.hero,
+    section.benifits,
+    section.how,
+    section.sports,
+    section.faq,
+    section.steps,
+    section.affilate,
+    footer .row
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .hero .first {
+        top: 19%;
+        right: 10%;
+    }
+    .hero .second {
+        top: 32%;
+        right: 5%;
+    }
+    .hero .third {
+        top: 7%;
+        right: 20%;
+    }
+    .hero .four {
+        top: 7%;
+        right: 65%;
+    }
+    .hero .five {
+        top: 32%;
+        right: 70%;
+    }
+
+    section.hero , 
+    section.affilate ,
+    section.sports {
+        &::before , &::after {
+            left: 0;
+        }
+        .text {
+            width: auto;
+            max-width:none;
+        }
+    }
+    header {
+            position: absolute;
+            nav ul li a{
+                font-size: 12px;
+            }
+            nav .btns a  {
+                padding: 5px 5px;
+                font-size: 10px;
+            
+            }
+    }
+    section.how::before {
+        background-size: cover;
+    }
+    
+    .outline {
+        margin: 10px auto;
+    }
+
+    .text h1, .text h2 {
+        font-size: 1.8em;
+        margin: 15px 0;
+    }
+    .text h4 {
+        font-size: 1.2em;
+    }
+    .text p {
+        font-size: 1em;
+    }
+
+    .login-pop-up .box {
+        min-width: 95%;
+        padding: 20px 15px;
+    }
+
+    .login-pop-up form .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .login-pop-up form .row .input {
+        width: 100%;
+    }
+
+    section.hero .text h1 {
+        font-size: 2.2em;
+    }
+
+    section.benifits .cards .card, form .inputs .input, form .row .input {
+        width: 100%;
+    }
+
+    section.terms {
+        padding: 60px 15px !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    section:not(.sports), header, footer {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+    
+
+    .text h1, .text h2 {
+        font-size: 2.2em;
+    }
+
+    .login-pop-up .box {
+        min-width: 500px;
+    }
+
+    section.hero .text h1 {
+        font-size: 3em;
+    }
+
+    form .inputs .input, form .row .input {
+        width: calc(50% - 10px);
+    }
+
+    section.benifits .cards .card {
+        width: calc(50% - 10px);
+    }
+
+    section.terms {
+        padding: 80px 30px !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+
+
+
+    .text h1, .text h2 {
+        font-size: 2.5em;
+    }
+
+    section.hero .text h1 {
+        font-size: 4em;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 100%;
+        background-color: var(--hover-color);
+        padding: 20px;
+        border-top: 1px solid #4e4399;
+        z-index: 100;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 25px;
+    }
+
+    header nav .btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        color: #fff;
+        font-size: 1.8em;
+        cursor: pointer;
+    }
+
+    section.hero {
+        text-align: center;
+    }
+
+    section.hero .text {
+        width: 100%;
+    }
+
+    section.benifits, section.affilate, section.steps {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    section.benifits .img, section.benifits .text,
+    section.affilate .img, section.affilate .text,
+    section.steps ul.steps, section.steps .step-img {
+        width: 80%;
+        margin: auto;
+    }
+
+    section.how .text, section.faq .text {
+        max-width: 80%;
+    }
+
+    footer .row {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    footer .row:first-child ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .row:first-child ul li:not(:last-child) a {
+        border-left: none;
+        padding: 0;
+    }
+
+    section.terms {
+        padding: 100px 40px !important;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 60px !important;
+        padding-left: 60px !important;
+    }
+    
+
+    .menu-icon {
+        display: none;
+    }
+
+    header nav {
+        display: flex !important;
+    }
+
+    section.terms {
+        padding: 100px 100px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .menu-icon {
+        display: none;
+    }
+
+    header nav {
+        display: flex !important;
+    }
+}

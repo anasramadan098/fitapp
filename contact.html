@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>فيت سبورت - تواصل معنا</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact.css">
+    </head>
+    <body>
+        <section class="welcome">
+            <div class="text">
+                <h1>
+                    تواصل معنا
+                </h1>
+                <p>
+                    <a href="/">الرئيسية</a> 
+                    <i class="fas fa-arrow-left"></i>
+                    <span>
+                        تواصل معنا
+                    </span>
+                </p>
+            </div>
+            <img src="imgs/contact-bg.png" alt="Contact BG">
+        </section>
+        <section class="form">
+            <div class="holder">
+                <h2>
+                    تواصل معنا
+                </h2>
+                <p>
+                    املأ النموذج وسيقوم فريقنا بالرد عليك في غضون 24 ساعة
+                </p>
+                <form action="/contact">
+                    <div class="row">
+                        <div class="input">
+                            <label for="name">الاسم</label>
+                            <input type="text" name="name" id="name" required placeholder="ما هو اسمك؟">
+                        </div>
+                        <div class="input">
+                            <label for="email">بريدك الإلكتروني</label>
+                            <input type="email" name="email" id="email" required placeholder="ما هو بريدك الإلكتروني؟">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input">
+                            <label for="phone">الهاتف</label>
+                            <input type="tel" name="phone" id="phone" required placeholder="0123456789">
+                        </div>
+                        <div class="input">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" name="subject" id="subject" required placeholder="ما هو موضوع رسالتك؟">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="message">الرسالة</label>
+                        <textarea name="message" id="message" cols="30" rows="10" required placeholder="أود التواصل معكم بخصوص..."></textarea>
+                    </div>
+                    <div class="outline">
+                        <button type="submit" class="btn">
+                            إرسال الرسالة
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
