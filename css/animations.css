@@ -1,5 +1,5 @@
 .hero {
-    i {
+    > i {
         position: absolute;
         color: #fff;
         opacity: .3;
@@ -28,7 +28,7 @@
     }
     .five {
         top: 60%;
-        right: 55%;
+        right: 85%;
         animation: translate3D 10s ease-in-out infinite;
     }
 }

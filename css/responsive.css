@@ -38,24 +38,24 @@ General Responsive Styles
         gap: 20px;
     }
     .hero .first {
-        top: 19%;
+        top: 79%;
         right: 10%;
     }
     .hero .second {
-        top: 32%;
-        right: 5%;
+        top: 40%;
+        right: 0%;
     }
     .hero .third {
-        top: 7%;
-        right: 20%;
+        top: 82%;
+        right: 64%;
     }
     .hero .four {
-        top: 7%;
-        right: 65%;
+        top: 17%;
+        right: 70%;
     }
     .hero .five {
-        top: 32%;
-        right: 70%;
+        top: 15%;
+        right: 1%;
     }
 
     section.hero , 
@@ -72,12 +72,42 @@ General Responsive Styles
     header {
             position: absolute;
             nav ul li a{
-                font-size: 12px;
+                font-size: 22px;
             }
             nav .btns a  {
                 padding: 5px 5px;
-                font-size: 10px;
+                font-size: 17px;
             
+            }
+            nav {
+                flex-direction: column;
+                background: var(--bg-color);
+                padding: 30px;
+                min-height: 100vh;
+                position: fixed;
+                padding-top: 130px;
+                top: 0;
+                right: 0;
+                transition: .3s;
+                display: none;
+                &.active {
+                    display: flex;
+                }
+                ul {
+                    align-items: start;
+                }
+                .btns , ul {
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+            .menu-icon {
+                font-size: 30px;
+                position: absolute;
+                right: 5%;
+                top: 30%;
+                color: #fff;
+                z-index: 5000;
             }
     }
     section.how::before {

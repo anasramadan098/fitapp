@@ -63,6 +63,11 @@ section.form {
     gap: 20px;
     flex-wrap: wrap;
     padding-bottom: 100px;
+    .time {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     .card {
         width: calc(100% / 2 - 20px);
       &:nth-child(odd) .box .icon .iconBox {
@@ -147,9 +152,10 @@ section.form {
               font-size: 2em;
               color: #fff;
             }
-            i {
-                color: var(--pink);
+            i , img {
+                color: var(--green);
                 font-size: 1em;
+
             }
             div {
                 color: #fff;
