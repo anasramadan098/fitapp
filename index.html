@@ -50,38 +50,27 @@
                     <a href="#"><i class="fa-brands fa-google"></i></a>
                 </li>
             </ul>
-            <form action="{{ route('sign_up') }}" method="POST">
-                @csrf
+            <form action="" method="POST">
                 <div class="input row">
                     <div class="input">
                         <label for="full-name">الاسم بالكامل</label>
-                        <input type="text" name="name" id="full-name" required placeholder="ادخل اسمك بالكامل" value="{{ old('name') }}">
-                        @error('name')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+                        <input type="text" name="name" id="full-name" required placeholder="ادخل اسمك بالكامل" >
                     </div>
                     <div class="input">
                         <label for="tel">رقم الهاتف</label>
-                        <input type="tel" name="tel"  id="tel" required placeholder="ادخل رقم هاتفك" value="{{ old('tel') }}">
-                        @error('tel')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+                        <input type="tel" name="tel"  id="tel" required placeholder="ادخل رقم هاتفك" >
+
                     </div>
                 </div>
                 <div class="input row">
                     <div class="input">
                         <label for="email">البريد الإلكتروني</label>
-                        <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني" value="{{ old('email') }}">
-                        @error('email')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+                        <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني" >
                     </div>
                     <div class="input">
                         <label for="password">كلمة المرور</label>
                         <input type="password" name="password" id="password" required placeholder="ادخل كلمة المرور">
-                        @error('password')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+
                     </div>
                 </div>
                 <div class="input row">
@@ -89,27 +78,20 @@
                         <label for="gender">الجنس</label>
                         <select name="gender" id="gender">
                             <option value="" selected disabled>اختر الجنس</option>
-                            <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>ذكر</option>
-                            <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>أنثى</option>
+                            <option value="male">ذكر</option>
+                            <option value="female" >أنثى</option>
                         </select>
-                        @error('gender')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+
                     </div>
                     <div class="input">
                         <label for="age">العمر</label>
-                        <input type="number" name="age" id="age" required placeholder="ادخل عمرك" value="{{ old('age') }}" />
-                        @error('age')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+                        <input type="number" name="age" id="age" required placeholder="ادخل عمرك"  />
+
                     </div>
                 </div>
                 <div class="input">
                     <label for="code">هل لديك كود دعوة؟</label>
-                    <input type="text" name="code" id="code" placeholder="ادخل كود الدعوة" value="{{ old('code') }}">
-                    @error('code')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
+                    <input type="text" name="code" id="code" placeholder="ادخل كود الدعوة" >
                 </div>
                 <div class="outline">
                     <button type="submit" class="btn">
@@ -136,21 +118,14 @@
                     <a href="#"><i class="fa-brands fa-google"></i></a>
                 </li>
             </ul>
-            <form action="{{ route('login') }}" method="POST">
-                @csrf
+            <form action="" method="POST">
                 <div class="input">
                     <label for="email">البريد الإلكتروني</label>
-                    <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني" value="{{ old('email') }}">
-                    @error('email')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
+                    <input type="email" name="email" id="email" required placeholder="ادخل بريدك الإلكتروني" >
                 </div>
                 <div class="input">
                     <label for="password">كلمة المرور</label>
                     <input type="password" name="password" id="password" required placeholder="ادخل كلمة المرور">
-                    @error('password')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
                 </div>
                 <div class="input row">
                     <label for="forget"></label>
@@ -177,19 +152,14 @@
     <!-- Start Header -->
     <header>
     <div class="logo">
-        <img src="{{ asset('imgs/logo.png') }}" alt="Fit Sport Logo">
+        <img src='imgs/logo.png' alt="Fit Sport Logo">
     </div>
     <nav>
         <ul class="links">
-            @if (Auth::check())
-                <li><a href="{{ route('home') }}">صفحة {{ Auth::user()->name }} </a></li>
-            @else 
-                <li><a href="{{ route('home') }}">الرئيسية</a></li>
-            @endif
-            <li><a href="{{ route('playgrounds') }}">الملاعب</a></li>
-            <li><a href="{{ route('contact') }}">تواصل معنا</a></li>
+                <li><a href="./index.html">الرئيسية</a></li>
+            <li><a href="./playground.html">الملاعب</a></li>
+            <li><a href="./contact.html">تواصل معنا</a></li>
         </ul>
-        @if (Auth::check()) 
             <div class="user-info" style="display: flex; align-items: center; gap: 20px;">
                 <form action="/search" method="GET" class="search-bar" style="display: flex; align-items: center; gap: 5px;">
                     <div class="input" style="display: flex; align-items: center; position: relative;">
@@ -208,7 +178,6 @@
                     تسجيل الخروج
                 </a>
             </div>
-        @else 
             <div class="btns">
                 <a href="#" onclick="openLoginHolder()">
                     تسجيل الدخول
@@ -217,7 +186,6 @@
                     إنشاء حساب
                 </a>
             </div>
-        @endif
     </nav>
     <div class="menu-icon">
         <i class="fa-solid fa-bars"></i>
@@ -592,40 +560,40 @@
      <footer>
     <div class="row">
         <div class="logo">
-            <img src="{{ asset('imgs/logo.png') }}" alt="Logo">
+            <img src="imgs/logo.png" alt="Logo">
         </div>
         <ul class="links">
-            <li><a href="{{ route('contact') }}">تواصل معنا</a></li>
-            <li><a href="{{ route('terms') }}">شروط الاستخدام</a></li>
-            <li><a href="{{ route('policy') }}">سياسة الخصوصية</a></li>
+            <li><a href="./contact.html">تواصل معنا</a></li>
+            <li><a href="./terms.html">شروط الاستخدام</a></li>
+            <li><a href="./policy.html">سياسة الخصوصية</a></li>
         </ul>
     </div>
     <div class="row">
         <ul class="payments">
             <li>
-                <img src="{{ asset('imgs/fawry.png') }}" alt="Fawry">
+                <img src="imgs/fawry.png" alt="Fawry">
             </li>
             <li>
-                <img src="{{ asset('imgs/paymob.png') }}" alt="Paymob">
+                <img src="imgs/paymob.png" alt="Paymob">
             </li>
             <li>
-                <img src="{{ asset('imgs/cod.png') }}" alt="Cash On Deleviry">
+                <img src="imgs/cod.png" alt="Cash On Deleviry">
             </li>
         </ul>
         <ul class="social">
             <li>
                 <a href="#">
-                    <img src="{{asset('imgs/facebook.gif')}}" alt="Facebook">
+                    <img src="imgs/facebook.gif" alt="Facebook">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="{{asset('imgs/tiktok.gif')}}" alt="TikTok">
+                    <img src="imgs/tiktok.gif" alt="TikTok">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="{{asset('imgs/instagram.gif')}}" alt="Instagram">
+                    <img src="imgs/instagram.gif" alt="Instagram">
                 </a>
             </li>
         </ul>
@@ -641,7 +609,7 @@
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="{{asset('js/home.js')}}"></script>
-    <script src="{{asset('js/gsaps.js')}}"></script>
+    <script src="js/home.js"></script>
+    <script src="js/gsaps.js"></script>
 </body>
 </html>
